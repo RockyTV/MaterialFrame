@@ -1,0 +1,28 @@
+#statusbar{
+    height: 24px;
+    width: 100%;
+    background: $primary-colour-dark;
+    transition: height .6s;
+    position: fixed;
+    top: 0;
+    z-index: 62;
+}
+.content{
+    margin-top: 70px;
+}
+#toolbar{
+    margin-top: 24px;
+}
+#main.stickytoolbar #toolbar{
+    position: fixed;
+    width: 100%;
+}
+.drawer-panels{
+    #drawer:before{
+        height: 24px;
+        background: rgba(0,0,0,.3);
+        width: 100%;
+        position: absolute;
+        content: '';
+    }
+}

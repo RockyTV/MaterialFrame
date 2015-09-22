@@ -1,0 +1,49 @@
+@import 'imports/imports';
+::selection{
+    background: $primary-colour;
+}
+html,
+body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1;
+    background: #eeeeee;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+body.fullbleed{
+    padding: 0;
+    margin: 0;
+}
+hr {
+    height: 1px;
+    background: $dividers;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    color: rgba(0, 0, 0, .7);
+}
+
+h2 {
+    color: $secondary-text;
+}
+
+.row {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+
+
+#tabs {
+    display: none;
+}

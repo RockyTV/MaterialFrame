@@ -1,0 +1,145 @@
+/*
+
+ _____ ____  ____  _     ____  ____  ____ 
+/__ __Y  _ \/  _ \/ \   /  _ \/  _ \/  __\
+  / \ | / \|| / \|| |   | | //| / \||  \/|
+  | | | \_/|| \_/|| |_/\| |_\\| |-|||    /
+  \_/ \____/\____/\____/\____/\_/ \|\_/\_\
+                                          
+ ____  _     ____ _____ ____  _      _  ____  ____ _____ ____  _     
+/   _\/ \ /\/ ___Y__ __Y  _ \/ \__/|/ \/ ___\/  _ Y__ __Y  _ \/ \  /|
+|  /  | | |||    \ / \ | / \|| |\/||| ||    \| / \| / \ | / \|| |\ ||
+|  \__| \_/|\___ | | | | \_/|| |  ||| |\___ || |-|| | | | \_/|| | \||
+\____/\____/\____/ \_/ \____/\_/  \|\_/\____/\_/ \| \_/ \____/\_/  \|
+
+HOW TO CHANGE THE TITLE IN THE TOOLBAR
+-------------------------------------
+I probably shouldn't have to tell you how to do this as it's pretty straight forwards
+Within the <div id="toolbar"> you'll find <div class="title">Title</div>. To change the title,
+change 'Title' to whatever you wish it to say, for example <div class="title">Material Design</div>
+
+HOW TO CHANGE THE COLOUR OF THE TOOLBAR
+---------------------------------------
+There are two ways to change the colour of the toolbar.
+The recommended method is to change the primary-colour variable inside of _colours.scss.
+The other method is to change the value for the background-color property below.
+The first method is recommended as your toolbar should be using your primary colour.
+The material design guidelines doesn't seem to explicitly mention not to have your toolbar as your
+primary colour, but it's recommended that you do. If you do want to have your toolbar as a different
+colour to your primary colour, follow the instructions noted below above the background-color property.
+
+HOW TO CHANGE TOOLBAR HEIGHT
+----------------------------
+There are three variants of toolbar. Normal, medium-tall and tall. Normal is the default toolbar height,
+and requires you to do nothing to to use it. The other two variants require you to change some code, but
+it was kept simple.
+
+To change the toolbar height, you should change <div id="toolbar"> to <div id="toolbar" class="#">.
+Replace the # with your toolbar height you want. For medium-tall, replace it with 'medium-tall'.
+For tall, replace the # with 'tall'.
+
+HOW TO CHANGE TOOLBAR CONTENT POSITIONING
+----------------------------------------
+There are multiple options for content positioning within the toolbar. Normal toolbar height does not 
+have any content positioning options, medium-tall and tall do however have content positioning options.
+
+Medium-tall has two options for content positioning, default and bottom. To use the default positioning,
+simply do nothing, as it's default. To use bottom you should change the <div id="content"> within <div id="toolbar" class="medium-tall">
+to <div id="content" class="bottom">.
+
+Tall has three options for content positioning, default, middle and bottom. As with medium-tall, normal is the default
+option and doesn't require you to do anything to use it. To use middle you should change the <div id="content"> within <div id="toolbar" class="tall">
+to <div id="content" class="middle">, to use bottom, simply change it to <div id="content" class="bottom"> instead
+
+*/
+
+#toolbar {
+    #content {
+        div {
+            display: inline-block;
+            font-size: 33px;
+            margin: 0 16px;
+            float: right;
+        }
+        div.first {
+            text-align: left;
+            float: left;
+            transition: display .6s;
+            display: inline-block;
+            cursor: pointer;
+        }
+        div.title {
+            font-size: 22px;
+            margin-top: 0;
+            position: absolute;
+            text-align: left;
+            float: left;
+        }
+        width: 100%;
+        padding-top: 0px;
+        transition: padding-top .6s;
+    }
+    height: 64px;
+    width: calc(100% - (24 * 2));
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    /* Change this to a regular hex/rgba/hsl colour if you don't want to use the primary colour for the toolbar */
+    background-color: $primary-colour;
+    color: white;
+    line-height: 64px;
+    transition: height .6s;
+    overflow: hidden;
+    z-index: 16;
+}
+#main .content{
+    margin-top: 0;
+}
+#main.stickytoolbar #toolbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#main.stickytoolbar-medium-tall #toolbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#main.stickytoolbar-tall #toolbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#main.stickytoolbar .content{
+    margin-top: 100px;
+}
+#main.stickytoolbar-medium-tall .content{
+    margin-top: 150px;
+}
+#main.stickytoolbar-tall .content{
+    margin-top: 210px;
+}
+#toolbar.medium-tall {
+    .bottom {
+        padding-top: 64px !important;
+        transition: padding-top .6s;
+    }
+    height: calc(64px * 2);
+}
+
+#toolbar.tall {
+    .middle {
+        padding-top: 64px  !important;
+        transition: padding-top .6s;
+    }
+    .bottom {
+        padding-top: calc(64px * 2)  !important;
+        transition: padding-top .6s;
+    }
+    height: calc(64px * 3);
+}
+
+@media screen and (min-width: 680px){
+    .hamburger{
+        display: none !important;
+        transition: display .6s;
+    }
+}

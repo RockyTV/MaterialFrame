@@ -1,0 +1,78 @@
+.card {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .hero {
+        img {
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-top: -16px;
+        margin-bottom: 24px;
+    }
+    .actions {
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+    p {
+        margin-top: 16px;
+    }
+    background: white;
+    min-width: 50px;
+    border-radius: 2px;
+    padding: 16px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    margin: 16px;
+    padding-bottom: 24px;
+    font-size: 14px;
+}
+
+.cardnoelevation{
+    background: white;
+    min-width: 50px;
+    border-radius: 2px;
+    padding: 16px;
+    margin: 16px;
+    padding-bottom: 24px;
+    font-size: 14px;
+    height: 50px;
+}
+.collapsed,
+.expanded {
+    transition: .6s;
+    overflow: hidden;
+}
+
+.collapsed {
+    max-height: 0;
+}
+
+.expanded {
+    max-height: 100px;
+}
+
+@media screen and (max-width: 680px) {
+    .card {
+        min-width: calc(100% - 48px);
+        margin-left: 8px;
+    }
+    body.fullbleed-cards {
+        .card {
+            width: calc(100% + 32px) !important;
+            margin: 8px 0;
+            border-radius: 0;
+        }
+    }
+}
+
+.row {
+    display: inline-block;
+}

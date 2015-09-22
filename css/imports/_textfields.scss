@@ -1,0 +1,63 @@
+input[type=text] {
+    border: none;
+    background: none;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: rgba(0, 0, 0, .1) 2px solid;
+    transition: border-bottom .4s;
+    font-size: 17px;
+    margin: 16px 0;
+    display: block;
+}
+
+input[type=text]:focus {
+    border-bottom: $primary-colour 2px solid;
+    outline: none;
+    transition: border-bottom .4s;
+}
+
+input[type=text][disabled] {
+    opacity: .7;
+    border-bottom: rgba(0, 0, 0, .3) 1px dotted;
+}
+
+input[type=text].error {
+    border-bottom: $error 2px solid;
+    color: $error;
+}
+
+input[type=text].error:focus {
+    border-bottom: $primary-colour 2px solid;
+    color: black;
+}
+.errortext{
+    color: $error;
+    display: block;
+    margin-top: -5px;
+}
+.characterlimit{
+    text-align: right;
+    display: block;
+    opacity: .6;
+}
+.inputtext.floating{
+    input[type=text]{
+        z-index: 50;
+        position: relative;
+    }
+    label{
+        position: absolute;
+        display: block;
+        margin-top: -52px;
+        z-index: 40;
+        transition: margin-top .4s, color .4s, font-size .4s;
+        color: rgba(0,0,0,.5);
+    }
+    input[type=text]:focus + label{
+        margin-top: -80px !important;
+        font-size: 13px;
+        transition: margin-top .4s, color .4s, font-size .4s;
+        color: $primary-colour;
+    }
+    display: inline-block;
+}

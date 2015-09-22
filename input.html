@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material Input</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <meta name="theme-color" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+
+<body class="fullbleed">
+    <div style="margin-left: 50px;margin-top: 50px">
+        <h2>Floating label</h2>
+        <div class="inputtext floating">
+            <input type="text" id="label">
+            <label id="labellable">Label</label>
+            <script>
+                $('#label').on('blur', function () {
+                    if ($("#label").val() != "") {
+                        document.getElementById('labellable').setAttribute('style', 'margin-top: -80px; font-size: 13px;');
+                    } else if ($("#label").val() == "") {
+                        document.getElementById('labellable').setAttribute('style', 'margin-top: -52px');
+                    }
+                });
+            </script>
+        </div>
+</body>
+
+</html>

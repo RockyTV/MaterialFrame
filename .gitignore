@@ -4,6 +4,9 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
+/css/.sass-cache
+/css/style.css
+/css/style.css.map
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
