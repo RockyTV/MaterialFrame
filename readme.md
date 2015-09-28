@@ -18,8 +18,6 @@ Work in progress components:
 - Tabs
 - Ripples
 
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
 ## Notes
 This project uses the SCSS variant of SASS. The compiled CSS is not included within this repository and must be compiled yourself through your tool of choice.
 There are various ways to compile SCSS and SASS into standard CSS3.
