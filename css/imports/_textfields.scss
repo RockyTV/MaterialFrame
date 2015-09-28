@@ -7,7 +7,7 @@ input[type=text] {
     transition: border-bottom .4s;
     font-size: 17px;
     margin: 16px 0;
-    display: block;
+    display: inline-block;
 }
 
 input[type=text]:focus {
@@ -60,4 +60,9 @@ input[type=text].error:focus {
         color: $primary-colour;
     }
     display: inline-block;
+}
+.inputtext{
+    .icon{
+        display: inline-block;
+    }
 }
