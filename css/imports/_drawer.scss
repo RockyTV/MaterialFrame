@@ -60,7 +60,7 @@
             margin: 0;
             margin-top: 8px;
         }
-        width: 320px;
+        width: calc(64px * 5);
         height: 100vh;
         display: inline-block;
         float: left;
@@ -76,7 +76,15 @@
         float: right;
     }
 }
-
+.drawer-panels.right{
+    #main{
+        float: left;
+    }
+    #drawer{
+        float: right;
+        position: relative;
+    }
+}
 @media screen and (max-width: 680px) {
     .drawer-panels {
         #drawer {
@@ -88,6 +96,9 @@
         #main{
             width: 100%;
         }
+    }
+    .drawer-panels.left{
+       margin-left: calc(+100% + 64px);
     }
     #drawer-off{
         position: fixed;
