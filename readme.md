@@ -17,6 +17,13 @@ Work in progress components:
 - Lists
 - Tabs
 - Ripples
+- 
+
+## Usage
+
+Using Material Frame is pretty simple. Afer adding it to your project, just open up the file for each component you want to use. There will be a long HTML comment telling you how to use that component. 
+
+For example, I want to use the Drawer component. All I have to do is open up drawer.html, and read the instructions that are written in the first lines of the file.
 
 ## Notes
 This project uses the SCSS variant of SASS. The compiled CSS is not included within this repository and must be compiled yourself through your tool of choice.
